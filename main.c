@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:33:58 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/23 19:22:02 by srobin           ###   ########.fr       */
+/*   Updated: 2020/01/23 19:29:12 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,13 @@ int			main(int argc, char **argv)
 	init_raw_mode();
 	init_term_data();
 	data = init_term_data();
-	tputs(data->backspace, 0, putch);
-	ft_putstr(data->backspace);
 	while (1)
 	{
 		ft_bzero(reader, BUFFER_SIZE);
 		read(0, reader, BUFFER_SIZE);
-		if (check_termcap_bs(data, reader))
+/*		if (check_termcap_test(data, reader))
 			continue ;
-		else if (execute_termcap(data, reader, BUFFER_SIZE))
+*/		else if (execute_termcap(data, reader, BUFFER_SIZE))
 			continue ;
 		else if (reader[0])
 			ft_putstr_fd(reader, 0);

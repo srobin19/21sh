@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 16:17:34 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/23 19:25:53 by srobin           ###   ########.fr       */
+/*   Updated: 2020/01/23 19:29:18 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 #define HISTORY_UP 3
 #define HISTORY_DOWN 4
 /*
-int			check_termcap_bs(t_term_d *data, char *input)
+int			check_termcap_test(t_term_d *data, char *input)
 {
 	if (!input)
 		return (-1);
 	if (input[0] == 27 && input[1] == 91 && input[2] == 68)
 	{
-		tputs(data->backspace, 0, putch);
+		tputs(data->test, 0, putch);
 		ft_putchar_fd(' ', 0);
-		tputs(data->backspace, 0, putch);
+		tputs(data->test, 0, putch);
 		return (1);
 	}
 	return (0);
