@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 17:36:01 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/22 19:26:41 by srobin           ###   ########.fr       */
+/*   Updated: 2020/01/23 19:23:36 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_term_d		*init_term_data()
 	data->move_right = tgetstr("nd", NULL);
 	data->line_up = tgetstr("up", NULL);
 	data->line_down = tgetstr("down", NULL);
+	data->backspace = tgetstr("bl", NULL);
 	return (data);
 }
 
