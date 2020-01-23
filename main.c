@@ -6,11 +6,13 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:33:58 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/22 19:27:52 by srobin           ###   ########.fr       */
+/*   Updated: 2020/01/23 16:45:40 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tosh.h"
+
+#define BUFFER_SIZE 3
 
 int			putch(int c)
 {
@@ -35,8 +37,9 @@ int			main(int argc, char **argv)
 	ft_putchar('\n');
 	while (1)
 	{
-		ft_bzero(reader, 3);
-		read(0, reader, 3);
+		ft_bzero(reader, BUFFER_SIZE);
+		read(0, reader, BUFFER_SIZE);
+		execute_termcap(data, reader, BUFFER_SIZE);
 		if (ft_isascii(reader[0]))
 		{
 			if (reader[0])

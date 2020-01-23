@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 17:31:33 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/22 19:26:53 by srobin           ###   ########.fr       */
+/*   Updated: 2020/01/23 16:53:06 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,16 @@ t_term_d			*init_term_data();
 int					init_term();
 void				init_raw_mode();
 /*
+**					termcaps_key.c
+*/
+int					check_termcap_key(char *input, size_t buffer);
+void				execute_termcap(t_term_d *data, char *input, size_t buffer);
+/*
 **					tgetnum.c
 */
 void				get_terminal_id(const char *name);
+/*
+**					utils.c
+*/
+int					putch(int c);
 #endif
