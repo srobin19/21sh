@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:34:43 by srobin            #+#    #+#             */
-/*   Updated: 2020/02/07 16:30:07 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:42:12 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,18 @@ void		cut_input(char **line, int start, int end)
 
 void		add_input(char **line, char *input, int start)
 {
+	char 	*s1;
+	char	*s2;
 
+	if (!*line || !input || (start > ft_strlen(*line)))
+		return ;
+	if (!(s1 = ft_strsub(*line, 0, start)))
+		exit(EXIT_FAILURE);
+	if (!(s2 = ft_strsub(*line, start, ft_strlen(*line))))
+		exit(EXIT_FAILURE);
+	free(*line);
+	if (!(*line = ft_str3join(s1, input, s2)))
+		exit(EXIT_FAILURE);
+	free(s1);
+	free(s2);
 }

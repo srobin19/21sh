@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 17:31:33 by srobin            #+#    #+#             */
-/*   Updated: 2020/02/07 16:17:34 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:34:39 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ int					putch(int c);
 */
 void				update_input(char *input, char **line);
 void				cut_input(char **line, int start, int end);
+void				add_input(char **line, char *input, int start);
 #endif

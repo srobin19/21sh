@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:33:58 by srobin            #+#    #+#             */
-/*   Updated: 2020/02/07 16:29:11 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:36:37 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int			putch(int c)
 int			main(void)
 {
 	char *line = ft_strdup("0123456789");
-	cut_input(&line, 3, 0);
+	char *input = "------";
+	add_input(&line, input, 12);
 	ft_putendl(line);
 	return (0);
 }
