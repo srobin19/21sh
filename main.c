@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:33:58 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/23 19:29:12 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:29:11 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ int			putch(int c)
 	return (c);
 }	
 
-int			main(int argc, char **argv)
+/*int			main(int argc, char **argv)
 {
 	char		reader[4];
 	t_term_d	*data;
+	char		*line;
 	(void)argc;
 	(void)argv;
 
@@ -34,14 +35,19 @@ int			main(int argc, char **argv)
 	{
 		ft_bzero(reader, BUFFER_SIZE);
 		read(0, reader, BUFFER_SIZE);
-/*		if (check_termcap_test(data, reader))
-			continue ;
-*/		else if (execute_termcap(data, reader, BUFFER_SIZE))
+		update_input(reader, &line);
+		if (execute_termcap(data, reader, BUFFER_SIZE))
 			continue ;
 		else if (reader[0])
 			ft_putstr_fd(reader, 0);
+		if (reader[0] && reader[0] == '\n')
+			ft_putendl(line);
 	}
-/*		ft_putstr("\033[33m\033[01m21sh $> \033[0m");
+
+
+
+
+		ft_putstr("\033[33m\033[01m21sh $> \033[0m");
 		get_next_line(0, &input);
 	if (ret == 0)
 	{
@@ -50,5 +56,14 @@ int			main(int argc, char **argv)
 			tputs(clear_term, 1, putch);	
 	//		tputs(tgoto(cm_cap, 50, 0), 1, putch);
 	}
-*/	return (0);
+	return (0);
+}
+*/
+
+int			main(void)
+{
+	char *line = ft_strdup("0123456789");
+	cut_input(&line, 3, 0);
+	ft_putendl(line);
+	return (0);
 }

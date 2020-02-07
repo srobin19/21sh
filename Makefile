@@ -6,7 +6,7 @@
 #    By: srobin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/13 16:43:10 by srobin            #+#    #+#              #
-#    Updated: 2020/01/23 16:25:17 by srobin           ###   ########.fr        #
+#    Updated: 2020/02/07 15:34:56 by srobin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = 21sh
 
 FLAG = -ltermcap
 
-SOURCE = main.c termcaps_init.c termcaps_keys.c 
+SOURCE = main.c termcaps_init.c termcaps_keys.c input.c 
 LIBFT_DIR = libft/
 
 COMP_OBJ = ./obj/*.o

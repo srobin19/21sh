@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 17:31:33 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/23 19:29:24 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:17:34 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_term_d
 	char			*line_up;
 	char			*line_down;
 	char			*backspace;
+	char			*test;
 }					t_term_d;
 /*
 **					termcaps_init.c
@@ -46,4 +47,9 @@ void				get_terminal_id(const char *name);
 **					utils.c
 */
 int					putch(int c);
+/*
+**					input.c
+*/
+void				update_input(char *input, char **line);
+void				cut_input(char **line, int start, int end);
 #endif

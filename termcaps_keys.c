@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 16:17:34 by srobin            #+#    #+#             */
-/*   Updated: 2020/01/23 19:29:18 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 15:31:41 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define MOVE_RIGHT 2
 #define HISTORY_UP 3
 #define HISTORY_DOWN 4
-/*
+
 int			check_termcap_test(t_term_d *data, char *input)
 {
 	if (!input)
@@ -30,7 +30,7 @@ int			check_termcap_test(t_term_d *data, char *input)
 	}
 	return (0);
 }
-*/
+
 int			check_termcap_key(char *input, size_t buffer)
 {
 	size_t	max_size;
