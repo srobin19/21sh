@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:34:43 by srobin            #+#    #+#             */
-/*   Updated: 2020/02/07 16:42:12 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:42:46 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		cut_input(char **line, int start, int end)
 	free(s2);
 }
 
-void		add_input(char **line, char *input, int start)
+void		paste_input(char **line, char *input, int start)
 {
 	char 	*s1;
 	char	*s2;

@@ -6,7 +6,7 @@
 /*   By: srobin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:33:58 by srobin            #+#    #+#             */
-/*   Updated: 2020/02/07 16:36:37 by srobin           ###   ########.fr       */
+/*   Updated: 2020/02/07 16:42:57 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			main(void)
 {
 	char *line = ft_strdup("0123456789");
 	char *input = "------";
-	add_input(&line, input, 12);
+	paste_input(&line, input, 12);
 	ft_putendl(line);
 	return (0);
 }
