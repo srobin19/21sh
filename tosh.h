@@ -41,6 +41,11 @@ int					check_termcap_key(char *input, size_t buffer);
 int					execute_termcap(t_term_d *data, char *input, size_t buffer, char
 						**line);
 /*
+**					command_keys.c
+*/
+int     		check_command_key(char *input);
+int     		execute_command(char *input, char **line);
+/*
 **					tgetnum.c
 */
 void				get_terminal_id(const char *name);

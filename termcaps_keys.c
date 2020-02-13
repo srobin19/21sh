@@ -16,6 +16,7 @@
 #define MOVE_RIGHT 2
 #define HISTORY_UP 3
 #define HISTORY_DOWN 4
+#define ENTER '\n'
 
 int			check_termcap_test(t_term_d *data, char *input)
 {

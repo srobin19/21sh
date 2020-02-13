@@ -37,12 +37,15 @@ int			main(int argc, char **argv)
 		ft_bzero(reader, BUFFER_SIZE);
 		read(0, reader, BUFFER_SIZE);
 
+		if (execute_command(reader, &line))
+			continue ;
 		if (execute_termcap(data, reader, BUFFER_SIZE, &line))
 			continue ;
+
 		if (reader[0])
 		{
+			ft_putchar_fd(reader[0], 0);
 			update_input(reader, &line);
-			ft_putstr_fd(line, 0);
 		}
 //		else if (reader[0])
 //			ft_putstr_fd(reader, 0);
