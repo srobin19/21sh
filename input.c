@@ -12,21 +12,23 @@
 
 #include "tosh.h"
 
-void		update_input(char *input, char **line)
+int			update_input(char *input, char **line)
 {
 	char	*tmp;
 
 	if (!input)
-		return ;
+		return (0);
 	if (!*line)
 	{
 		if (!(*line = ft_strdup(input)))
 			exit(EXIT_FAILURE);
+		return (1);
 	}
 	if (!(tmp = ft_strjoin(*line, input)))
 		exit(EXIT_FAILURE);
 	free(*line);
 	*line = tmp;
+	return (1);
 }
 
 void		cut_input(char **line, int start, int end)

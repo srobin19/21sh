@@ -34,7 +34,7 @@ int			check_termcap_test(t_term_d *data, char *input)
 int			check_termcap_key(char *input, size_t buffer)
 {
 	size_t	max_size;
-	
+
 	if (!input)
 		return (-1);
 	max_size = ft_strlen(input);
@@ -51,7 +51,7 @@ int			check_termcap_key(char *input, size_t buffer)
 	return (0);
 }
 
-int			execute_termcap(t_term_d *data, char *input, size_t buffer)
+int			execute_termcap(t_term_d *data, char *input, size_t buffer, char **line)
 {
 	if (!input)
 		return (-1);
@@ -62,7 +62,7 @@ int			execute_termcap(t_term_d *data, char *input, size_t buffer)
 	else if (check_termcap_key(input, buffer) == MOVE_RIGHT)
 		tputs(data->move_right, 0, putch);
 	else if (check_termcap_key(input, buffer) == HISTORY_UP)
-		ft_putstr_fd("HISTORY_UP", 0);
+		update_input("HISTORY_UP", line);
 	else if (check_termcap_key(input, buffer) == HISTORY_DOWN)
 		ft_putstr_fd("HISTORY_DOWN", 0);
 	return (1);

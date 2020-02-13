@@ -18,7 +18,7 @@ int			putch(int c)
 {
 	write(1, &c, 1);
 	return (c);
-}	
+}
 
 int			main(int argc, char **argv)
 {
@@ -36,11 +36,16 @@ int			main(int argc, char **argv)
 	{
 		ft_bzero(reader, BUFFER_SIZE);
 		read(0, reader, BUFFER_SIZE);
-		update_input(reader, &line);
-		if (execute_termcap(data, reader, BUFFER_SIZE))
+
+		if (execute_termcap(data, reader, BUFFER_SIZE, &line))
 			continue ;
-		else if (reader[0])
-			ft_putstr_fd(reader, 0);
+		if (reader[0])
+		{
+			update_input(reader, &line);
+			ft_putstr_fd(line, 0);
+		}
+//		else if (reader[0])
+//			ft_putstr_fd(reader, 0);
 		if (reader[0] && reader[0] == '\n')
 			ft_putstr_fd("prompt > ", 0);
 	}
@@ -54,7 +59,7 @@ int			main(int argc, char **argv)
 	{
 		//get_terminal_id(getenv("TERM"));
 		if (input && !(ft_strcmp(input, "clear")))
-			tputs(clear_term, 1, putch);	
+			tputs(clear_term, 1, putch);
 	//		tputs(tgoto(cm_cap, 50, 0), 1, putch);
 	}
 	return (0);

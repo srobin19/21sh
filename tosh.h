@@ -38,7 +38,8 @@ void				init_raw_mode();
 */
 int					check_termcap_test(t_term_d *data, char *input);
 int					check_termcap_key(char *input, size_t buffer);
-int					execute_termcap(t_term_d *data, char *input, size_t buffer);
+int					execute_termcap(t_term_d *data, char *input, size_t buffer, char
+						**line);
 /*
 **					tgetnum.c
 */
@@ -50,7 +51,7 @@ int					putch(int c);
 /*
 **					input.c
 */
-void				update_input(char *input, char **line);
+int					update_input(char *input, char **line);
 void				cut_input(char **line, int start, int end);
 void				paste_input(char **line, char *input, int start);
 #endif
