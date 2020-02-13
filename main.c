@@ -20,7 +20,7 @@ int			putch(int c)
 	return (c);
 }	
 
-/*int			main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	char		reader[4];
 	t_term_d	*data;
@@ -31,6 +31,7 @@ int			putch(int c)
 	init_raw_mode();
 	init_term_data();
 	data = init_term_data();
+	ft_putstr_fd("prompt > ", 0);
 	while (1)
 	{
 		ft_bzero(reader, BUFFER_SIZE);
@@ -41,12 +42,12 @@ int			putch(int c)
 		else if (reader[0])
 			ft_putstr_fd(reader, 0);
 		if (reader[0] && reader[0] == '\n')
-			ft_putendl(line);
+			ft_putstr_fd("prompt > ", 0);
 	}
 
 
 
-
+/*
 		ft_putstr("\033[33m\033[01m21sh $> \033[0m");
 		get_next_line(0, &input);
 	if (ret == 0)
@@ -60,11 +61,13 @@ int			putch(int c)
 }
 */
 
+/*
 int			main(void)
 {
 	char *line = ft_strdup("0123456789");
 	char *input = "------";
 	paste_input(&line, input, 12);
 	ft_putendl(line);
-	return (0);
+	return (0);£
+*/
 }
