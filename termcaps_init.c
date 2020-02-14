@@ -15,7 +15,7 @@
 t_term_d		*init_term_data()
 {
 	t_term_d	*data;
-	
+
 	data = malloc(sizeof(t_term_d));
 
 	data->co_size = tgetnum("co");
@@ -24,6 +24,8 @@ t_term_d		*init_term_data()
 	data->move_right = tgetstr("nd", NULL);
 	data->line_up = tgetstr("up", NULL);
 	data->line_down = tgetstr("down", NULL);
+	data->clear_line = tgetstr("cd", NULL);
+	data->cursor_start = tgetstr("cr", NULL);
 	data->test = tgetstr("bl", NULL);
 	return (data);
 }

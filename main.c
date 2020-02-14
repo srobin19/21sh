@@ -44,8 +44,10 @@ int			main(int argc, char **argv)
 
 		if (reader[0])
 		{
-			ft_putchar_fd(reader[0], 0);
+			clear_line(data);
+			ft_putstr_fd("prompt > ", 0);
 			update_input(reader, &line);
+			ft_putstr_fd(line, 0);
 		}
 //		else if (reader[0])
 //			ft_putstr_fd(reader, 0);

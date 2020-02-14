@@ -14,7 +14,7 @@ NAME = 21sh
 
 FLAG = -ltermcap
 
-SOURCE = main.c termcaps_init.c termcaps_keys.c input.c command_keys.c
+SOURCE = main.c termcaps_init.c termcaps_keys.c input.c command_keys.c clear.c
 LIBFT_DIR = libft/
 
 COMP_OBJ = ./obj/*.o

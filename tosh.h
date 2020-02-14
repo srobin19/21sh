@@ -25,12 +25,14 @@ typedef struct		s_term_d
 	char			*line_up;
 	char			*line_down;
 	char			*backspace;
+	char			*clear_line;
+	char			*cursor_start;
 	char			*test;
-}					t_term_d;
+}						t_term_d;
 /*
 **					termcaps_init.c
 */
-t_term_d			*init_term_data();
+t_term_d		*init_term_data();
 int					init_term();
 void				init_raw_mode();
 /*
@@ -45,6 +47,10 @@ int					execute_termcap(t_term_d *data, char *input, size_t buffer, char
 */
 int     		check_command_key(char *input);
 int     		execute_command(char *input, char **line);
+/*
+**					clear.c
+*/
+void     		clear_line(t_term_d *data);
 /*
 **					tgetnum.c
 */

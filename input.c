@@ -12,11 +12,13 @@
 
 #include "tosh.h"
 
+
+
 int			update_input(char *input, char **line)
 {
 	char	*tmp;
 
-	if (!input)
+	if (!input || !ft_isprint(*input))
 		return (0);
 	if (!*line)
 	{
