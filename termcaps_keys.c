@@ -12,6 +12,7 @@
 
 #include "tosh.h"
 
+
 #define MOVE_LEFT 1
 #define MOVE_RIGHT 2
 #define HISTORY_UP 3
@@ -58,12 +59,22 @@ int			execute_termcap(t_term_d *data, char *input, size_t buffer, char **line)
 		return (-1);
 	if (!check_termcap_key(input, buffer))
 		return (0);
-	if (check_termcap_key(input, buffer) == MOVE_LEFT)
-		tputs(data->move_left, 0, putch);
-	else if (check_termcap_key(input, buffer) == MOVE_RIGHT)
-		tputs(data->move_right, 0, putch);
+	if (check_termcap_key(input, buffer) == MOVE_LEFT){
+		if (data->co_x > 0){
+			tputs(data->move_left, 0, putch);
+			if(data->co_x > 0)
+				data->co_x -= 1;
+		}
+	}
+	else if (check_termcap_key(input, buffer) == MOVE_RIGHT){
+		if (data->co_x < ft_strlen(*line)){
+			tputs(data->move_right, 0, putch);
+			if(data->co_x < ft_strlen(*line))
+				data->co_x += 1;
+		}
+	}
 	else if (check_termcap_key(input, buffer) == HISTORY_UP)
-		update_input("HISTORY_UP", line);
+		update_input("HISTORY_UP", line, data);
 	else if (check_termcap_key(input, buffer) == HISTORY_DOWN)
 		ft_putstr_fd("HISTORY_DOWN", 0);
 	return (1);

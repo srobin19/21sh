@@ -28,6 +28,9 @@ typedef struct		s_term_d
 	char			*clear_line;
 	char			*cursor_start;
 	char			*test;
+	int				co_x;
+	int				li_y;
+
 }						t_term_d;
 /*
 **					termcaps_init.c
@@ -62,7 +65,7 @@ int					putch(int c);
 /*
 **					input.c
 */
-int					update_input(char *input, char **line);
+int					update_input(char *input, char **line, t_term_d *data);
 void				cut_input(char **line, int start, int end);
 void				paste_input(char **line, char *input, int start);
 #endif

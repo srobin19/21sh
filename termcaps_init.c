@@ -27,6 +27,8 @@ t_term_d		*init_term_data()
 	data->clear_line = tgetstr("cd", NULL);
 	data->cursor_start = tgetstr("cr", NULL);
 	data->test = tgetstr("bl", NULL);
+	data->co_x = 1;
+	data->li_y = 1;
 	return (data);
 }
 

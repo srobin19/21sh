@@ -13,8 +13,7 @@
 #include "tosh.h"
 
 
-
-int			update_input(char *input, char **line)
+int			update_input(char *input, char **line, t_term_d *data)
 {
 	char	*tmp;
 
@@ -30,6 +29,8 @@ int			update_input(char *input, char **line)
 		exit(EXIT_FAILURE);
 	free(*line);
 	*line = tmp;
+	data->co_x += 1;
+//	ft_putnbr_fd(data->li_y, 0);
 	return (1);
 }
 
