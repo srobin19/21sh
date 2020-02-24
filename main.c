@@ -14,17 +14,18 @@
 
 #define BUFFER_SIZE 3
 
-int			putch(int c)
+int					putch(int c)
 {
 	write(1, &c, 1);
 	return (c);
 }
 
-int			main(int argc, char **argv)
+int					main(int argc, char **argv)
 {
-	char		reader[4];
+	char			reader[4];
 	t_term_d	*data;
-	char		*line;
+	char			*line;
+	char			prompt[1024] = "prompt > ";
 	(void)argc;
 	(void)argv;
 
@@ -45,14 +46,12 @@ int			main(int argc, char **argv)
 		if (reader[0])
 		{
 			clear_line(data);
-			ft_putstr_fd("prompt > ", 0);
+			ft_putstr_fd(prompt, 0);
 			update_input(reader, &line, data);
 			ft_putstr_fd(line, 0);
+			tputs(tgoto(data->move_cursor, data->co_x + ft_strlen(prompt)
+				, data->li_size), 0, putch);
 		}
-//		else if (reader[0])
-//			ft_putstr_fd(reader, 0);
-		if (reader[0] && reader[0] == '\n')
-			ft_putstr_fd("prompt > ", 0);
 	}
 
 

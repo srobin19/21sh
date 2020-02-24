@@ -27,7 +27,7 @@ typedef struct		s_term_d
 	char			*backspace;
 	char			*clear_line;
 	char			*cursor_start;
-	char			*test;
+	char			*move_cursor;
 	int				co_x;
 	int				li_y;
 
